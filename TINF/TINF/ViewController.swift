@@ -9,11 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let titleComponent = Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: true, title: "Title", desc: "Descrtiption")
+    var titles = [
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description"),
+        Title(cgRect: CGRect(x: 15, y: 100, width: 343, height: 80), opaqucity: 1, withCross: false, title: "Title", desc: "Description")
+    ]
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let titleComponent = Header(cgRect: CGRect(x: 15, y: 100, width: 343, height: 72), opaqucity: 1, header: "Header", subHeader: "Subheader", topButtonText: "", bottomButtonText: "", titles: titles, visibilityType: .vertical)
+        view.addSubview(titleComponent)
         setUpComponents()
     }
     
@@ -21,7 +35,7 @@ class ViewController: UIViewController {
     
     func setUpComponents() {
                         
-        view.addSubview(titleComponent)
+        
         
         //NSLayoutConstraint.activate(titleComponentConstraints)
         

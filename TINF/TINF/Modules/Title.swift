@@ -1,5 +1,5 @@
 //
-//  Title.swift
+//  Header.swift
 //  TINF
 //
 //  Created by Евгений Парфененков on 22.04.2023.
@@ -29,6 +29,8 @@ class Title: UIView {
         self.title = title
         self.desc = desc
         super.init(frame: cgRect)
+        
+        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width, height: 80)
         
         setUpComponents()
     }
@@ -73,6 +75,7 @@ class Title: UIView {
         titleTextView.font = .systemFont(ofSize: 19)
         titleTextView.textColor = .black
         titleTextView.backgroundColor = .clear
+        titleTextView.isScrollEnabled = false
         
         titleTextView.translatesAutoresizingMaskIntoConstraints = false
         let titleTextViewConstraints = [
@@ -91,6 +94,7 @@ class Title: UIView {
         descriptionTextView.font = .systemFont(ofSize: 15)
         descriptionTextView.textColor = .gray
         descriptionTextView.backgroundColor = .clear
+        descriptionTextView.isScrollEnabled = false
         
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         let descriptionTextViewConstraints = [
@@ -127,32 +131,5 @@ class Title: UIView {
         setUpDescription()
         
         if withCross && opaqucity == 1 { setUpCross() }
-    }
-}
-
-
-
-
-class Header: UIView {
-    
-    var cgRect: CGRect
-    
-    var opaqucity: Bool
-    
-    var header: String
-    var subHeader: String
-    var buttons: [UIButton]
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    init(cgRect: CGRect, opaqucity: Bool, header: String, subHeader: String, buttons: [UIButton]) {
-        self.cgRect = cgRect
-        self.opaqucity = opaqucity
-        self.header = header
-        self.subHeader = subHeader
-        self.buttons = buttons
-        super.init(frame: cgRect)
     }
 }
