@@ -17,8 +17,9 @@ let package = Package(
         .target(
             name: "Package",
             dependencies: [],
+            path: "Sources",
             resources: [
-                .process("Assets.xcassets")
+                .process("Resources/Assets.xcassets")
             ]
         ),
 
