@@ -289,12 +289,16 @@ class Header: UIView {
         if bottomButtonText != "" { setUpBottomButton() }
         if topButtonText != "" || titles.count > 0 { setUpTopButton() }
         
-        switch visibilityType {
-        case .vertical:
-            setUpTitlesVertical()
-        case .horizontal:
-            setUpTitlesHorizontal()
+        if titles != [] {
+            switch visibilityType {
+            case .vertical:
+                setUpTitlesVertical()
+            case .horizontal:
+                setUpTitlesHorizontal()
+            }
         }
+        
+        
         
         setUpView()
     }
